@@ -30,8 +30,8 @@ const CreateWorkflowDialog = ({ triggerText }: { triggerText?: string }) => {
     onSuccess: () => {
       toast.success("Workflow created", {id: "create-worflow"});
     },
-    onError: (error) => {
-      toast.error(error.message || "Failed to create workflow", {id: "create-worflow"});
+    onError: () => {
+      toast.error("Failed to create workflow", {id: "create-worflow"});
     },
   });
 
@@ -41,7 +41,7 @@ const CreateWorkflowDialog = ({ triggerText }: { triggerText?: string }) => {
   }, [mutate])
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(open) => { form.reset(); setOpen(open)}}>
       <DialogTrigger asChild>
         <Button>{triggerText ?? "Create workflow"}</Button>
       </DialogTrigger>
