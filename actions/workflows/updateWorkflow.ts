@@ -3,6 +3,7 @@
 import prisma from "@/lib/prisma";
 import { WorkflowStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
 
 interface Props {
   id: string;
@@ -34,4 +35,6 @@ export async function UpdateWorkflow({ id, definition }: Props) {
       definition,
     },
   });
+
+  revalidatePath("/workflows");
 }
