@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { TaskParam } from "@/types/task";
 import { Handle, Position } from "@xyflow/react";
 import { ReactNode } from "react";
-import NodeParamField from "./NodeParamField";
 import { ColorForHandle } from "./common";
 
 export const NodeOutputs = ({ children }: { children: ReactNode }) => {

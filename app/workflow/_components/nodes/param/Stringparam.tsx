@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { ParamProps } from "@/types/appNode";
 import { useId, useState } from "react";
 
-const Stringparam = ({ param, value, updateNodeParamValue }: ParamProps) => {
+const StringParam = ({ param, value, updateNodeParamValue }: ParamProps) => {
   const [internalValue, setInternalValue] = useState(value);
   const id = useId();
 
@@ -30,4 +30,4 @@ const Stringparam = ({ param, value, updateNodeParamValue }: ParamProps) => {
   );
 };
 
-export default Stringparam;
+export default StringParam;

@@ -5,7 +5,7 @@ import { useReactFlow } from "@xyflow/react";
 import { AppNode } from "@/types/appNode";
 import { useCallback } from "react";
 import BrowserInstanceParam from "./param/BrowserInstanceParam";
-import Stringparam from "./param/Stringparam";
+import StringParam from "./param/StringParam";
 
 const NodeParamField = ({
   param,
@@ -33,7 +33,7 @@ const NodeParamField = ({
   switch (param.type) {
     case TaskParamType.STRING:
       return (
-        <Stringparam
+        <StringParam
           param={param}
           value={value}
           updateNodeParamValue={updateNodeParamValue}
